@@ -1,0 +1,34 @@
+{
+  "replacements": [
+    {
+      "files": ["**/*.cs", "**/*.razor", "**/*.csproj", "**/*.json", "**/*.nuspec"],
+      "exclude": ["**/bin/**", "**/obj/**"],
+      "replacements": {
+        "ToSic.Cre8magic": "[Owner]",
+        "Basic": "[Theme]",
+        "Cre8magic": "[Owner]"
+      }
+    },
+    {
+      "files": ["**/*.css", "**/*.scss", "**/*.js"],
+      "exclude": ["**/node_modules/**"],
+      "replacements": {
+        "basic": "[theme]",
+        "cre8magic": "[owner]"
+      }
+    }
+  ],
+  "excludePatterns": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/bin/**",
+    "**/obj/**",
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.gif",
+    "**/*.ico",
+    "**/.vs/**",
+    "**/.vscode/**"
+  ]
+}
