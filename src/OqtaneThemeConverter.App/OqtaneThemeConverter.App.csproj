@@ -8,6 +8,8 @@
     <Nullable>enable</Nullable>
     <!-- Enable Windows targeting for cross-platform build -->
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- Specify custom entry point -->
+    <StartupObject>OqtaneThemeConverter.App.AppLauncher</StartupObject>
   </PropertyGroup>
 
   <!-- Conditional compilation for Windows-specific features -->

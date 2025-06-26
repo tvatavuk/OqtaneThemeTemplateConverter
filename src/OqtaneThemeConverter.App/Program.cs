@@ -37,7 +37,7 @@ public partial class App : Application
 /// <summary>
 /// Entry point for the application that detects CLI args vs GUI launch
 /// </summary>
-public static class Program
+public static class AppLauncher
 {
     [STAThread]
     static async Task<int> Main(string[] args)
