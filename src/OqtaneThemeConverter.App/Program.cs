@@ -1,4 +1,5 @@
 using System.CommandLine;
+using Microsoft.UI.Dispatching;
 
 #if WINDOWS
 using Microsoft.UI.Xaml;
