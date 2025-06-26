@@ -1,39 +1,10 @@
 using System.CommandLine;
-using Microsoft.UI.Dispatching;
 
 #if WINDOWS
 using Microsoft.UI.Xaml;
 #endif
 
 namespace OqtaneThemeConverter.App;
-
-#if WINDOWS
-/// <summary>
-/// Provides application-specific behavior to supplement the default Application class.
-/// </summary>
-public partial class App : Application
-{
-    private Window? _mainWindow;
-
-    /// <summary>
-    /// Initializes the singleton application object.
-    /// </summary>
-    public App()
-    {
-        this.InitializeComponent();
-    }
-
-    /// <summary>
-    /// Invoked when the application is launched.
-    /// </summary>
-    /// <param name="args">Details about the launch request and process.</param>
-    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
-    {
-        _mainWindow = new MainWindow();
-        _mainWindow.Activate();
-    }
-}
-#endif
 
 /// <summary>
 /// Entry point for the application that detects CLI args vs GUI launch
@@ -96,14 +67,9 @@ public static class AppLauncher
 #if WINDOWS
     private static int RunGuiMode()
     {
-        // Initialize WinUI app
-        WinRT.ComWrappersSupport.InitializeComWrappers();
+        // Use the standard WinUI application startup pattern
         Application.Start((p) => {
-            var context = new DispatcherQueueSynchronizationContext(
-                DispatcherQueue.GetForCurrentThread()
-            );
-            SynchronizationContext.SetSynchronizationContext(context);
-            new App();
+            var app = new App();
         });
         return 0;
     }
