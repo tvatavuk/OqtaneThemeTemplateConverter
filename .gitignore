@@ -1,0 +1,27 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# Visual Studio / Visual Studio Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+
+# Local files
+*.log
+*.temp
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package files
+*.nupkg
+*.snupkg
+
+# Old README
+README_OLD.md
